@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Embedded Ruby Links
+    ```ruby
+        eg: <%= link_to "About Me", home_about_path %>
+        #where home_about = prefix gave after you run the command "rails routes (for newer versions) or rake routes (for version below 6.0)
+    ```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2. Partials (Imports)
+    ```ruby
+        #partials should start with "underscore" eg: _navbar.html.erb
+    ```
