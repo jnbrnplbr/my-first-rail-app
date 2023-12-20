@@ -10,3 +10,8 @@
     ```ruby
         #partials should start with "underscore" eg: _navbar.html.erb
     ```
+
+3. Added CSS Framework | Bootstrap 5
+    - refer to the link for the guide: https://www.rubydoc.info/gems/bootstrap/5.3.2
+
+4. 
