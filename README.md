@@ -14,4 +14,5 @@
 3. Added CSS Framework | Bootstrap 5
     - refer to the link for the guide: https://www.rubydoc.info/gems/bootstrap/5.3.2
 
-4. 
+4. Added new gem - devise
+    - refer to the link for the installation: https://github.com/heartcombo/devise

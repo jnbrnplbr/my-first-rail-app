@@ -37,7 +37,7 @@ gem 'dartsass-sprockets'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 5.3.2'
 gem 'jquery-rails'
-
+gem 'devise', '~> 4.9', '>= 4.9.3'
 
 
 group :development, :test do
