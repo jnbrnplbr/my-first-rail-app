@@ -16,3 +16,6 @@
 
 4. Added new gem - devise
     - refer to the link for the installation: https://github.com/heartcombo/devise
+    - Note: you should generate the views (<small><b>``` rails generate devise:views ```</b></small>) to customize the design or some info on the authentications.
+
+5.
