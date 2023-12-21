@@ -13,8 +13,7 @@
     <%= render 'layouts/navbar' %>
     <main>
       <section class="py-5 text-center container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%= render 'layouts/flash' %>
         <%= yield %>
       </section>
     </main>
