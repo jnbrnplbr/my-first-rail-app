@@ -1,111 +1,73 @@
-<%
-=begin%>
- <div class="container">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-3">logo here</div>
-    <div class="col-3">
-      <h2>Log in</h2>
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <form>
-          
-            <div class="field mb-3">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control "  %>
-            </div>
-
-            <div class="field mb-3">
-              <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-            </div>
-
-            <% if devise_mapping.rememberable? %>
-              <div class="field mb-3 text-start">
-                <%= f.check_box :remember_me, class: "form-check-input mb-3" %>
-                <%= f.label :remember_me %>
-              </div>
-            <% end %>
-
-            <div class="actions mb-3 d-grid gap-2">
-              <%= f.submit "Log in", class: "btn btn-primary"%>
-            </div>
-        </form>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-    </div>
-  </div>
-</div> 
-<%
-=end%>
-
 <main class="form-signin h-100">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <form>
-      <%
-=begin%>
- <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> 
-<%
-=end%>
-      <h1 class="h3 mb-3 fw-bold">Please log in</h1>
-      <p class="mb-3 text-muted">New here? <%= link_to "Sign up today", new_user_registration_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></p>
+
+      <%= image_tag "logo.png", class: "mb-4", width: "250", height: "250" %>
+
+      <h1 class="h3 mb-1 fw-bold font-monospace">Please log in</h1>
+      <p class="mb-2 text-muted fw-light font-monospace">New here? <%= link_to "Sign up today", new_user_registration_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></p>
       <div class="form-floating">
-        <%= f.email_field :email, class: "form-control ", id: "floatingInput",   placeholder: "Email Address" %>
-        <%= f.label :email, for: "floatingInput" %>
+        <%= f.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email Address" %>
+        <%= f.label :email, for: "floatingInput", class: "font-monospace" %>
       </div>
       <div class="form-floating">
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password", id: "floatingPassword" %>
-        <%= f.label :password, id: "floatingPassword" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control font-monospace", placeholder: "Password", id: "floatingPassword" %>
+        <%= f.label :password, id: "floatingPassword", class: "font-monospace" %>
       </div>
 
-      <div class="checkbox mb-3 text-start">
+      <div class="checkbox mb-2 text-center">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, class: "font-monospace" %> |
+        <%= link_to "Forgot password", new_password_path(resource_name), class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover font-monospace" %>
       </div>
-     
-      <%= f.submit "Log in", class: "w-100  btn btn-primary"%>
-      <p class="mt-5 mb-3 text-muted">© 2023–2024 SamRiver</p>
+
+      <%= f.submit "Log in", class: "w-100  btn btn-primary mb-2 font-monospace"%>
+
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
+          <li class="breadcrumb-item active font-monospace" aria-current="page ">Login</li>
+        </ol>
+      </nav>
     </form>
   <% end %>
 </main>
 
 
 
-<% content_for :inline do %>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
 
-    .form-signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
 
-    .form-signin .checkbox {
-      font-weight: 400;
-    }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
 
-    .form-signin .form-floating:focus-within {
-      z-index: 2;
-    }
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
 
-    .form-signin input[type="email"] {
-      margin-bottom: -1px;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
-    .form-signin input[type="password"] {
-      margin-bottom: 10px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  </style>
-<% end %>
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
