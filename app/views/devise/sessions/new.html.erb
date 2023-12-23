@@ -5,7 +5,7 @@
       <%= image_tag "logo.png", class: "mb-4", width: "250", height: "250" %>
 
       <h1 class="h3 mb-1 fw-bold font-monospace">Please log in</h1>
-      <p class="mb-2 text-muted fw-light font-monospace">New here? <%= link_to "Sign up today", new_user_registration_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></p>
+      <p class="mb-2 text-muted fw-light font-monospace"><small>New here? <%= link_to "Sign up today", new_user_registration_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></small></p>
       <div class="form-floating">
         <%= f.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email Address" %>
         <%= f.label :email, for: "floatingInput", class: "font-monospace" %>

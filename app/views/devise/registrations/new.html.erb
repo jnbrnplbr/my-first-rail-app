@@ -1,4 +1,7 @@
-<h2>Sign up</h2>
+
+<%
+=begin%>
+ <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -26,4 +29,79 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> 
+<%
+=end%>
+
+
+<main class="form-signin h-100">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    <form>
+      <%= image_tag "logo.png", class: "mb-4", width: "250", height: "250" %>
+
+      <h1 class="h3 mb-1 fw-bold font-monospace">Sign Up</h1>
+      <p class="mb-2 text-muted fw-light font-monospace"><small>Already have an account? <%= link_to "Log in", new_user_session_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></small></p>
+      
+      <div class="form-floating">
+        <%= f.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email Address" %>
+        <%= f.label :email, for: "floatingInput", class: "font-monospace" %>
+      </div>
+      <div class="form-floating">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control font-monospace", placeholder: "Password", id: "floatingPassword" %>
+        <%= f.label :password, id: "floatingPassword", class: "font-monospace" %>
+      </div>
+      <div class="form-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control font-monospace",placeholder: "Password Confirmation",id: "floatingPassword" %>
+        <%= f.label :password_confirmation, id: "floatingPassword", class: "font-monospace" %>
+      </div>
+
+      <%= f.submit "Sign Up", class: "w-100  btn btn-primary mt-3 mb-2 font-monospace"%>
+
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
+          <li class="breadcrumb-item active font-monospace" aria-current="page">Sign Up</li>
+        </ol>
+      </nav>
+    </form>
+  <% end %>
+</main>
+
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+
+  .form-signin .form-floating:focus-within {
+    z-index: 3;
+  }
+
+  .form-signin input[type="email"] {
+    margin-bottom: 2px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .form-signin input[type="password"] {
+    margin-bottom: 2px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+</style>
