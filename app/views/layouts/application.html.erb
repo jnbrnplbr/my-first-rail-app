@@ -8,15 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <%= yield :inline %>
   <body>
-    <%= render 'layouts/navbar' %>
-    <main>
-      <section class="py-5 text-center container">
-        <%= render 'layouts/flash' %>
-        <%= yield %>
-      </section>
-    </main>
+    <% if page_without_navbar %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
+    <section class="py-5 text-center container">
+      <%= render 'layouts/flash' %>
+      <%= yield %>
+    </section>
   </body>
   <%= render 'layouts/js' %>
 </html>
