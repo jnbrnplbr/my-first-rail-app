@@ -13,7 +13,9 @@
     <% if page_without_navbar %>
       <%= render 'layouts/navbar' %>
     <% end %>
+    <%= yield :breadcrumb %>
     <section class="py-5 text-center container">
+
       <%= render 'layouts/flash' %>
       <%= yield %>
     </section>
