@@ -37,3 +37,15 @@
     #2 add the code below inside the config/initializers/assets.rb file.
     Rails.application.config.assets.precompile += %w( custom.css )
 ```
+
+7. Errors Encountered and Fixes
+    - ActiveRecord::RecordNotUnique: RuntimeError: UNIQUE constraint failed:
+        - to fix the issue, remove the or comment out the data from test/fixtures/users.yml which trigger the error since it doesn't provide any valid data which is used for the testing.
+        ```ruby
+            #one: {}
+            # column: value
+
+            #
+            #two: {}
+            # column: value
+        ```
