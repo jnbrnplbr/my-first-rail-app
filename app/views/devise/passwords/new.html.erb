@@ -1,16 +1,38 @@
-<h2>Forgot your password?</h2>
+<main class="form-signin h-100">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <form>
+      <h1 class="h3 mb-1 fw-bold font-monospace">Forgot your password?</h1>
+      <p class="mb-2 text-muted fw-light font-monospace text-justify">
+        <small>
+          Enter the email address associated with your account and we'll send you a link to reset your password.
+        </small>
+      </p>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email Address" %>
+        <%= f.label :email, for: "floatingInput", class: "font-monospace" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.submit "Send me reset password instructions", class: "w-100  btn btn-success mb-2 font-monospace", style: "font-size: 12px;" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
+          <li class="breadcrumb-item active font-monospace" aria-current="page ">Forgot Password</li>
+        </ol>
+      </nav>
+    </form>
+  <% end %>
+</main>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+</style>
