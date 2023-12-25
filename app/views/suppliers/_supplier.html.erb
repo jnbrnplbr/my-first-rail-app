@@ -9,11 +9,11 @@
   <td>
     <%= supplier.created_by %>
   </td>
-  <td>
-  <div class="btn-group" role="group" aria-label="Table Actions">
-    <%= link_to "Show", supplier, class: "btn btn-outline-primary" %>
-    <%= link_to "Edit", edit_supplier_path(supplier), class: "btn btn-outline-info" %>
-    <%= link_to "Delete", supplier, method: :delete , class: "btn btn-outline-danger" %>
-  </div>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", supplier, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_supplier_path(supplier), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", supplier, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
   </td>
 </tr>
