@@ -8,7 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= yield :inline %>
+  <%
+=begin%>
+ <%= yield :inline %>
   <body>
     <% if page_without_navbar %>
       <%= render 'layouts/navbar' %>
@@ -21,5 +23,15 @@
     </section>
     <%= render 'layouts/footer' %>
   </body>
-  <%= render 'layouts/js' %>
+  <%= render 'layouts/js' %> 
+<%
+=end%>
+  <body>
+      
+    <%= render 'layouts/flash' %>
+    <%= yield %>
+
+
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
