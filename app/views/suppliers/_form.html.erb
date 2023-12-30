@@ -11,17 +11,20 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="py-5 w-25">
+    <div class="form-floating mb-3">
+      <%= form.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Name" %>
+      <%= form.label :name, for: "floatingInput", class: "font-monospace" %>
+    </div>
 
-  <div>
-    <%= form.label :created_by, style: "display: block" %>
-    <%= form.number_field :created_by %>
-  </div>
+      <div class="form-floating mb-3">
+      <%= form.number_field :created_by, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Created By" %>
+      <%= form.label :created_by, for: "floatingInput", class: "font-monospace" %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Back to suppliers", suppliers_path, class: "btn btn-outline-secondary" %>
+      <%= form.submit "Submit", class: "btn btn-primary"%>
+    </div>
   </div>
 <% end %>
