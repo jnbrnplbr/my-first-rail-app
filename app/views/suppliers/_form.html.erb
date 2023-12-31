@@ -22,7 +22,10 @@
       <%= form.label :created_by, for: "floatingInput", class: "font-monospace" %>
     </div>
 
+    
+
     <div class="d-flex justify-content-between">
+      <%= yield :show_button %>
       <%= link_to "Back to suppliers", suppliers_path, class: "btn btn-outline-secondary" %>
       <%= form.submit "Submit", class: "btn btn-primary"%>
     </div>
