@@ -1,5 +1,16 @@
 <%= form_with(model: supplier) do |form| %>
   <% if supplier.errors.any? %>
+  <div class="mt-5">
+    <% supplier.errors.each do |error| %>
+      <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
+        <%= error.full_message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  </div>
+<%
+=begin%>
+ 
     <div style="color: red">
       <h2><%= pluralize(supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
 
@@ -8,7 +19,9 @@
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+    </div> 
+<%
+=end%>
   <% end %>
 
   <div class="py-5 w-25">
@@ -22,11 +35,6 @@
       <%= form.label :created_by, for: "floatingInput", class: "font-monospace" %>
     </div>
 
-    <%
-=begin%>
- <%= link_to "Show this supplier", @supplier %> 
-<%
-=end%>
     <div class="d-flex justify-content-between">
       <%= link_to "Back to suppliers", suppliers_path, class: "btn btn-outline-secondary" %>
       <% if request.path.include?"/edit" %>
@@ -34,6 +42,5 @@
       <% end %>
       <%= form.submit "Submit", class: "btn btn-primary"%>
     </div>
-
   </div>
 <% end %>

@@ -52,7 +52,10 @@
 
 8. Added Dynamic Elements depending on the current route looking for specific substring.
     ```ruby
-        <% if request.path.include?"/edit" %>
-            <%= link_to "Show suppliers", @supplier, class: "btn btn-outline-success" %>
-        <% end %>
+        # Way 1 - use the request.path and include helper function/method to check if the current route contains the specific substring.
+        request.path.include?"/edit"
+
+        # Way 2 - You can use the current_page helper where you supply the specific controller and method used.
+        # For some instances, this code below doesn't work with conditional if false.
+        current_page?(controller: 'suppliers', action: 'edit')
     ```

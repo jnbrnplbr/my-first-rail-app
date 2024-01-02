@@ -1,10 +1,47 @@
-<p style="color: green"><%= notice %></p>
+<table class="table table-bordered table-hover font-monospace mt-5">
+  <thead >
+    <td colspan="4">
+      <%= link_to "New Supplier", new_supplier_path, class: "btn btn-primary float-end " %>
+    </td>
+  </thead>
+  <thead>
+    <th>#</th>
+    <th>Name</th>
+    <th>Created By</th>
+    <th class="text-center">Actions</th>
+  </thead>
+  <tbody>
+    <%= render @supplier %>
+  </tbody>
+</table>
 
-<%= render @supplier %>
+<% content_for :page_title do %>  
+  <div class="container-fluid overflow-hidden w-100 ">
+    <div class="row bg-light justify-content-around align-items-center pt-3">
+      <div class="col">
+        <h1 class="font-monospace fs-5"><%= "#{@supplier.name}" %></h1>
+      </div>
+      <div class="col">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
+            <li class="breadcrumb-item"><%= link_to "Suppliers", suppliers_path, class: "text-decoration-none font-monospace" %></li>
+            <li class="breadcrumb-item active font-monospace" aria-current="page "><%= "#{@supplier.name}" %></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%
+=begin%>
+ 
 
 <div>
   <%= link_to "Edit this supplier", edit_supplier_path(@supplier) %> |
   <%= link_to "Back to suppliers", suppliers_path %>
-
   <%= button_to "Destroy this supplier", @supplier, method: :delete %>
-</div>
+</div> 
+<%
+=end%>
