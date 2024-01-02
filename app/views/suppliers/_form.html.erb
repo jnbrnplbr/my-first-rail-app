@@ -22,12 +22,18 @@
       <%= form.label :created_by, for: "floatingInput", class: "font-monospace" %>
     </div>
 
-    
-
+    <%
+=begin%>
+ <%= link_to "Show this supplier", @supplier %> 
+<%
+=end%>
     <div class="d-flex justify-content-between">
-      <%= yield :show_button %>
       <%= link_to "Back to suppliers", suppliers_path, class: "btn btn-outline-secondary" %>
+      <% if request.path.include?"/edit" %>
+        <%= link_to "Show suppliers", @supplier, class: "btn btn-outline-success" %>
+      <% end %>
       <%= form.submit "Submit", class: "btn btn-primary"%>
     </div>
+
   </div>
 <% end %>

@@ -49,3 +49,10 @@
             #two: {}
             # column: value
         ```
+
+8. Added Dynamic Elements depending on the current route looking for specific substring.
+    ```ruby
+        <% if request.path.include?"/edit" %>
+            <%= link_to "Show suppliers", @supplier, class: "btn btn-outline-success" %>
+        <% end %>
+    ```
