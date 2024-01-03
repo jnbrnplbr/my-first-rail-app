@@ -58,6 +58,11 @@
         # Way 2 - You can use the current_page helper where you supply the specific controller and method used.
         # For some instances, this code below doesn't work with conditional if false.
         current_page?(controller: 'suppliers', action: 'edit')
+
+        # Way 3 - since there are other pages for suppliers for example like new, edit and show. the link does not get highlighted so you can use
+        # the controller_name so that all actions or pages under that controller will highlight the side bar
+        controller_name === 'suppliers'
+
     ```
 
 
