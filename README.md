@@ -59,3 +59,19 @@
         # For some instances, this code below doesn't work with conditional if false.
         current_page?(controller: 'suppliers', action: 'edit')
     ```
+
+
+9. Diving deep to the Active Record Associate or creation of relationship between models/tables.
+    ```ruby
+
+        # a "supplier" belongs to a user who created him/her. instead of user_id we created created_by field.
+        # you can use the "created_by_user" to access the data from user model.
+        belongs_to :created_by_user, class_name: 'User', foreign_key: 'created_by', optional: true
+
+        # sample usage:
+        @supplier.created_by_user.email
+
+        #output
+        #jnbrnplbr@gmail.com
+
+    ```

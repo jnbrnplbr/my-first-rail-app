@@ -1,4 +1,5 @@
 class SuppliersController < ApplicationController
+ 
   before_action :authenticate_user!
   before_action :set_supplier, only: %i[ show edit update destroy ]
 
@@ -23,7 +24,7 @@ class SuppliersController < ApplicationController
   # POST /suppliers or /suppliers.json
   def create
     @supplier = Supplier.new(supplier_params)
-
+    @supplier.current_user = current_user
     respond_to do |format|
       if @supplier.save
         format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
@@ -68,4 +69,5 @@ class SuppliersController < ApplicationController
     def supplier_params
       params.require(:supplier).permit(:name, :created_by)
     end
+
 end

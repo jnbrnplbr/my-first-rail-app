@@ -29,11 +29,15 @@
       <%= form.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Name" %>
       <%= form.label :name, for: "floatingInput", class: "font-monospace" %>
     </div>
-
+<%
+=begin%>
+ 
       <div class="form-floating mb-3">
       <%= form.number_field :created_by, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Created By" %>
       <%= form.label :created_by, for: "floatingInput", class: "font-monospace" %>
-    </div>
+    </div> 
+<%
+=end%>
 
     <div class="d-flex justify-content-between">
       <%= link_to "Back to suppliers", suppliers_path, class: "btn btn-outline-secondary" %>
