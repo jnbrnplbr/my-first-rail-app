@@ -80,3 +80,25 @@
         #jnbrnplbr@gmail.com
 
     ```
+
+10. Update the error message throw per field. 
+    ```ruby
+    # on  models/supplier.rb
+    # name is the field to modify the error message whenever triggered.
+    validates :name, presence: { message: 'Supplier name is required.' }
+
+    # Change error.full_message to error.message
+    <%= form_with(model: supplier) do |form| %>
+        <% if supplier.errors.any? %>
+            <div class="mt-5">
+                <% supplier.errors.each do |error| %>
+                    <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
+                        #from <%= error.full_message %> 
+                        <%= error.message %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+    ```

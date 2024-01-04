@@ -27,7 +27,8 @@ class SuppliersController < ApplicationController
     @supplier.current_user = current_user
     respond_to do |format|
       if @supplier.save
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
+        #format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
+        format.html { redirect_to suppliers_path, notice: "Supplier was successfully created." }
         format.json { render :show, status: :created, location: @supplier }
       else
         format.html { render :new, status: :unprocessable_entity }
