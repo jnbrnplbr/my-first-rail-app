@@ -102,3 +102,24 @@
         <% end %>
     <% end %>
     ```
+
+11. Use rails command line. Some of the useful command.
+    ```ruby 
+        Model.column_names # shows the column names
+        Model.all # shows all the data
+    ```
+
+12. Fully recreate the schema
+    ```ruby
+        # 1. Drop the database
+        rails db:drop
+
+        # 2. Recreate it
+        rails db:create
+
+        # 3. Migrate the tablesS
+        rails db:migrate
+
+        #Note: This is only applicable for a development who still starting and use's dummy data. Doing this will wipe all the data on the existing database.
+
+    ```
