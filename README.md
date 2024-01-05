@@ -123,3 +123,15 @@
         #Note: This is only applicable for a development who still starting and use's dummy data. Doing this will wipe all the data on the existing database.
 
     ```
+
+13. When ddding new column to an existing table make sure to add the new field on the permitted fields on the controller. 
+
+    ```ruby
+    # eg. controllers/suppliers_controller.rb
+    
+    # added the new fields such as :email, :point_person, :contact_number
+    def supplier_params
+      params.require(:supplier).permit(:name, :email, :point_person, :contact_number, :created_by)
+    end
+    
+    ```

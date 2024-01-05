@@ -1,6 +1,6 @@
 class Supplier < ApplicationRecord
     attr_accessor :current_user
-    validates :name, presence: { message: 'Supplier Name is required.' }
+    validates :name, :email, :point_person, :contact_number, presence: true
     belongs_to :created_by_user, class_name: 'User', foreign_key: 'created_by', optional: true
     before_create :set_created_by
 

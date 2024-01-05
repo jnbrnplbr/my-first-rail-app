@@ -3,7 +3,7 @@
   <div class="mt-5">
     <% supplier.errors.each do |error| %>
       <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
-        <%= error.message %>
+        <%= error.full_message %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     <% end %>
@@ -12,22 +12,22 @@
 
 <div class="py-5 w-25">
   <div class="form-floating mb-3">
-    <%= form.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Name" %>
+    <%= form.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Name" %>
     <%= form.label :name, for: "floatingInput", class: "font-monospace" %>
   </div>
 
   <div class="form-floating mb-3">
-    <%= form.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Email" %>
+    <%= form.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email" %>
     <%= form.label :email, for: "floatingInput", class: "font-monospace" %>
   </div>
 
   <div class="form-floating mb-3">
-    <%= form.text_field :point_person, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Email" %>
+    <%= form.text_field :point_person, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Point Person " %>
     <%= form.label :point_person, for: "floatingInput", class: "font-monospace" %>
   </div>
 
   <div class="form-floating mb-3">
-    <%= form.text_field :contact_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Supplier Email" %>
+    <%= form.text_field :contact_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Contact No." %>
     <%= form.label :contact_number, for: "floatingInput", class: "font-monospace" %>
   </div>
 
