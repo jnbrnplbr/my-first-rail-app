@@ -33,8 +33,14 @@
     <th class="text-center">Actions</th>
   </thead>
   <tbody>
-    <% @suppliers.each do |supplier| %>
-      <%= render supplier %>
+    <% if @suppliers.count != 0 %>
+      <% @suppliers.each do |supplier| %>
+        <%= render supplier %>
+      <% end %>
+    <% else %>
+      <tr class="text-center">
+        <td colspan="6" class="text-muted">No available supplier yet. </td>
+      </tr>
     <% end %>
   </tbody>
 </table>

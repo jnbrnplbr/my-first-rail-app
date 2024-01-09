@@ -1,17 +1,44 @@
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-        <% project.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="mt-5">
+      <% project.errors.each do |error| %>
+        <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
+          <%= error.full_message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
     </div>
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <div class="py-5 w-25">
+      <div class="form-floating mb-3">
+        <%= form.text_field :description, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Description" %>
+        <%= form.label :description, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= form.number_field :bid_amount, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Bid Amount" %>
+        <%= form.label :bid_amount, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= select_tag "supplier", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
+        <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= form.text_field :contact_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Contact No." %>
+        <%= form.label :contact_number, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <%= link_to "Back to projects", projects_path, class: "btn btn-outline-secondary" %>
+        <% if request.path.include?"/edit" %>
+          <%= link_to "Show projects", @project, class: "btn btn-outline-success" %>
+        <% end %>
+        <%= form.submit "Submit", class: "btn btn-primary"%>
+      </div>
+    </div>
   </div>
 <% end %>

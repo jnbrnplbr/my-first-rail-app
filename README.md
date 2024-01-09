@@ -135,3 +135,12 @@
     end
     
     ```
+
+14. For select tag form. You can use the select_tag 
+```html
+    # Make sure to return the all suppliers.
+    <div class="form-floating mb-3">
+        <%= select_tag "supplier", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
+        <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
+    </div>
+```

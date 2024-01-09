@@ -1,2 +1,35 @@
 <div id="<%= dom_id project %>">
+
+    
 </div>
+
+
+
+<%
+=begin%>
+ <tr id="<%= dom_id project %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= supplier.name %>
+  </td>
+  <td>
+    <%= supplier.contact_number %>
+  </td>
+  <td>
+    <%= supplier.point_person %>
+  </td>
+  <td>
+    <%= supplier.created_by_user.email %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", supplier, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_supplier_path(supplier), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", supplier, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr> 
+<%
+=end%>
