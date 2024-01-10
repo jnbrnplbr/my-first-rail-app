@@ -1,0 +1,24 @@
+<tr id="<%= dom_id fund %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= fund.name %>
+  </td>
+  <td>
+    <%= fund.type %>
+  </td>
+  <td>
+    <%= fund.amount %>
+  </td>
+  <td>
+    <%= fund.created_by_user.email %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", fund, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_fund_path(fund), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", fund, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr> 
