@@ -144,3 +144,10 @@
         <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
     </div>
 ```
+
+15. Currency format method helper
+```ruby
+    # by default it uses the dollar sign as money sign.
+    number_to_currency(fund.amount, :unit=>"₱")
+```
+

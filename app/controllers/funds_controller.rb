@@ -22,7 +22,7 @@ class FundsController < ApplicationController
   # POST /funds or /funds.json
   def create
     @fund = Fund.new(fund_params)
-
+    @fund.created_by = current_user.id
     respond_to do |format|
       if @fund.save
         format.html { redirect_to fund_url(@fund), notice: "Fund was successfully created." }
@@ -65,6 +65,6 @@ class FundsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fund_params
-      params.require(:fund).permit(:name, :type, :amount, :created_by)
+      params.require(:fund).permit(:name, :category, :amount, :created_by)
     end
 end

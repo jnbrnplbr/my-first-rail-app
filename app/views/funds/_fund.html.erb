@@ -6,10 +6,10 @@
     <%= fund.name %>
   </td>
   <td>
-    <%= fund.type %>
+    <%= fund.category %>
   </td>
   <td>
-    <%= fund.amount %>
+    <%= number_to_currency(fund.amount, :unit=>"₱") %>
   </td>
   <td>
     <%= fund.created_by_user.email %>

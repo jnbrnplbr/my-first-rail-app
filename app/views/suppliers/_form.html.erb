@@ -36,7 +36,7 @@
     <% if request.path.include?"/edit" %>
       <%= link_to "Show suppliers", @supplier, class: "btn btn-outline-success" %>
     <% end %>
-    <%= form.submit "Submit", class: "btn btn-primary"%>
+    <%= form.submit "#{ (request.path.include?"/edit")? 'Update' : 'Submit' }", class: "btn #{ (request.path.include?"/edit")? 'btn-warning' : 'btn-primary'}"%>
   </div>
 </div>
 <% end %>
