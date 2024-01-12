@@ -10,10 +10,11 @@
     </div>
   <% end %>
 
-  <div>
-    <div class="py-5 w-25">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 py-5 w-25">
+      <h4 class="mb-3">General Information</h4>
       <div class="form-floating mb-3">
-        <%= form.text_field :description, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Description" %>
+        <%= form.text_area :description, class: "form-control font-monospace", style: "height: 100px;", placeholder: "Description" %>
         <%= form.label :description, for: "floatingInput", class: "font-monospace" %>
       </div>
 
@@ -27,13 +28,53 @@
         <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
       </div>
 
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 py-5 w-25">
+      <h4 class="mb-3">Budget and Specifications</h4>
+
       <div class="form-floating mb-3">
-        <%= form.text_field :contact_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Contact No." %>
-        <%= form.label :contact_number, for: "floatingInput", class: "font-monospace" %>
+        <%= form.number_field :purchase_request_amount, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Purchase Request Amount" %>
+        <%= form.label :purchase_request_amount, for: "floatingInput", class: "font-monospace" %>
       </div>
 
-      <div class="d-flex justify-content-between">
-        <%= link_to "Back to projects", projects_path, class: "btn btn-outline-secondary" %>
+      <div class="form-floating mb-3">
+        <%= select_tag "fund", options_from_collection_for_select(@funds, "id","name"),class: "form-control" %>
+        <%= form.label :fund, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= form.text_area :specification, rows: "10", class: "form-control", style: "height: 250px;", placeholder: "Technical Specifications" %>
+        <%= form.label :specification, for: "floatingInput", class: "font-monospace" %>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 py-5 w-25">
+      <h4 class="mb-3">Others</h4>
+      <div class="form-floating mb-3">
+        <%= form.text_field :solicitation_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Solicitation No." %>
+        <%= form.label :solicitation_number, for: "floatingInput", class: "font-monospace" %>
+      </div>
+      <div class="form-floating mb-3">
+        <%= form.text_field :notice_of_award, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Notice of Award" %>
+        <%= form.label :notice_of_award, for: "floatingInput", class: "font-monospace" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= form.text_field :notice_to_proceed, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Notice to Proceed" %>
+        <%= form.label :notice_to_proceed, for: "floatingInput", class: "font-monospace" %>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <%= form.text_field :purchase_order, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Purchase Order" %>
+        <%= form.label :purchase_order, for: "floatingInput", class: "font-monospace" %>
+      </div>
+      
+
+    </div>
+
+    <div class="col-12">
+      <div class="d-flex justify-content-start">
+        <%= link_to "Back to projects", projects_path, class: "btn btn-outline-secondary mx-3" %>
         <% if request.path.include?"/edit" %>
           <%= link_to "Show projects", @project, class: "btn btn-outline-success" %>
         <% end %>

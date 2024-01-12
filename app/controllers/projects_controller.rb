@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @suppliers = Supplier.all
+    @funds = Fund.all
   end
 
   # GET /projects/1/edit
