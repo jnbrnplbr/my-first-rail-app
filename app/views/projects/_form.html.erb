@@ -15,17 +15,17 @@
       <h4 class="mb-3">General Information</h4>
       <div class="form-floating mb-3">
         <%= form.text_area :description, class: "form-control font-monospace", style: "height: 100px;", placeholder: "Description" %>
-        <%= form.label :description, for: "floatingInput", class: "font-monospace" %>
+        <%= form.label "Description", for: "floatingInput", class: "font-monospace" %>
       </div>
 
       <div class="form-floating mb-3">
         <%= form.number_field :bid_amount, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Bid Amount" %>
-        <%= form.label :bid_amount, for: "floatingInput", class: "font-monospace" %>
+        <%= form.label "Bid Amount", for: "floatingInput", class: "font-monospace" %>
       </div>
 
       <div class="form-floating mb-3">
-        <%= select_tag "supplier", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
-        <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
+        <%= select_tag "#{:project}[#{:supplier_id}]", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
+        <%= form.label "Supplier", for: "floatingInput", class: "font-monospace" %>
       </div>
 
     </div>
@@ -34,12 +34,12 @@
 
       <div class="form-floating mb-3">
         <%= form.number_field :purchase_request_amount, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Purchase Request Amount" %>
-        <%= form.label :purchase_request_amount, for: "floatingInput", class: "font-monospace" %>
+        <%= form.label "Purchase Request Amount", for: "floatingInput", class: "font-monospace" %>
       </div>
 
       <div class="form-floating mb-3">
-        <%= select_tag "fund", options_from_collection_for_select(@funds, "id","name"),class: "form-control" %>
-        <%= form.label :fund, for: "floatingInput", class: "font-monospace" %>
+        <%= select_tag "#{:project}[#{:fund_id}]", options_from_collection_for_select(@funds, "id","name"),class: "form-control" %>
+        <%= form.label "Fund", for: "floatingInput", class: "font-monospace" %>
       </div>
 
       <div class="form-floating mb-3">

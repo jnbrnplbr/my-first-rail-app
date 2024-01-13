@@ -1,4 +1,5 @@
 class FundsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_fund, only: %i[ show edit update destroy ]
 
   # GET /funds or /funds.json

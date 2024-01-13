@@ -24,7 +24,7 @@ class SuppliersController < ApplicationController
   # POST /suppliers or /suppliers.json
   def create
     @supplier = Supplier.new(supplier_params)
-    @supplier.current_user = current_user
+    @supplier.created_by = current_user.id
     respond_to do |format|
       if @supplier.save
         #format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }

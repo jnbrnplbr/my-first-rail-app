@@ -23,10 +23,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_130747) do
 
   create_table "projects", force: :cascade do |t|
     t.string "description"
-    t.integer "supplier_id"
+    t.float "bid_amount"
+    t.float "purchase_request_amount"
+    t.integer "fund_id"
+    t.integer "supplier_id", null: false
+    t.string "specification", default: ""
+    t.string "notice_of_award", default: ""
+    t.string "notice_to_proceed", default: ""
+    t.string "purchase_order", default: ""
     t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fund_id"], name: "index_projects_on_fund_id"
     t.index ["supplier_id"], name: "index_projects_on_supplier_id"
   end
 
@@ -61,4 +69,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_130747) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "projects", "funds"
 end

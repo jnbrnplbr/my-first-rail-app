@@ -137,12 +137,16 @@
     ```
 
 14. For select tag form. You can use the select_tag 
-```html
+```ruby
     # Make sure to return the all suppliers.
     <div class="form-floating mb-3">
         <%= select_tag "supplier", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
         <%= form.label :supplier, for: "floatingInput", class: "font-monospace" %>
     </div>
+
+    # Note: Make sure to use the code below to include the select_tag form into the same object.
+
+    <%= select_tag "#{:project}[#{:supplier_id}]", options_from_collection_for_select(@suppliers, "id","name"),class: "form-control" %>
 ```
 
 15. Currency format method helper
