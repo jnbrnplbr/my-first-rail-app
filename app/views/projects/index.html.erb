@@ -1,29 +1,34 @@
 <% content_for :page_title do %>  
-  <div class="container-fluid overflow-hidden w-100 ">
-    <div class="row bg-light justify-content-around align-items-center pt-3">
-      <div class="col">
-        <h1 class="font-monospace fs-5">Projects</h1>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-end">
+        <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
+        <li class="breadcrumb-item active font-monospace" aria-current="h2">Projects</li>
+      </ol>
+    </nav>
+      <h1 class="h2">Projects</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            This week
+        </button>
       </div>
-      <div class="col">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-          <ol class="breadcrumb justify-content-end">
-            <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
-            <li class="breadcrumb-item active font-monospace" aria-current="page ">Projects</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
   </div>
 <% end %>
 
 <table class="table table-bordered table-hover font-monospace mt-5">
   <thead >
-    <td colspan="6">
+    <td colspan="7">
       <%= link_to "New Project", new_project_path, class: "btn btn-primary float-end " %>
     </td>
   </thead>
   <thead>
     <th>#</th>
+    <th>Solicitation No.</th>
     <th>Project Description</th>
     <th>Bid Amount</th>
     <th>Supplier</th>

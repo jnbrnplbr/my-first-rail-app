@@ -1,0 +1,15 @@
+=> 
+[[32m#<Project:0x000055bf94bda4a8[0m
+  id: [34m[1m1[0m,
+  description: [31m[1m"[0m[31mtest[0m[31m[1m"[0m,
+  bid_amount: [35m[1m123321321.0[0m,
+  purchase_request_amount: [35m[1m123213213.0[0m,
+  fund_id: [34m[1m1[0m,
+  supplier_id: [34m[1m1[0m,
+  specification: [31m[1m"[0m[31m[1m"[0m,
+  notice_of_award: [31m[1m"[0m[31mnoa123[0m[31m[1m"[0m,
+  notice_to_proceed: [31m[1m"[0m[31mntp123[0m[31m[1m"[0m,
+  purchase_order: [31m[1m"[0m[31mpo1232[0m[31m[1m"[0m,
+  created_by: [34m[1m1[0m,
+  created_at: Sat, 13 Jan 2024 09:40:05.087820000 UTC +00:00,
+  updated_at: Sat, 13 Jan 2024 09:40:05.087820000 UTC +00:00[32m>[0m]

@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_130747) do
     t.integer "fund_id"
     t.integer "supplier_id", null: false
     t.string "specification", default: ""
+    t.string "solicitation_number", null: false
     t.string "notice_of_award", default: ""
     t.string "notice_to_proceed", default: ""
     t.string "purchase_order", default: ""

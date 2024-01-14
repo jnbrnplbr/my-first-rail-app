@@ -76,7 +76,7 @@
       <div class="d-flex justify-content-start">
         <%= link_to "Back to projects", projects_path, class: "btn btn-outline-secondary mx-3" %>
         <% if request.path.include?"/edit" %>
-          <%= link_to "Show projects", @project, class: "btn btn-outline-success" %>
+          <%= link_to "Show projects", @project, class: "btn btn-outline-success me-3" %>
         <% end %>
         <%= form.submit "#{ (request.path.include?"/edit")? 'Update' : 'Submit' }", class: "btn #{ (request.path.include?"/edit")? 'btn-warning' : 'btn-primary'}"%>
       </div>

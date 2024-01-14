@@ -1,6 +1,29 @@
 <div id="<%= dom_id project %>">
-
-    
+  <td>
+    #
+  </td>
+  <td>
+    <%= project.solicitation_number %>
+  </td>
+  <td>
+    <%= project.description %>
+  </td>
+  <td>
+    <%= number_to_currency(project.bid_amount, :unit=>"₱") %>
+  </td>
+  <td>
+    <%= project.fund.name %>
+  </td>
+  <td>
+    <%= project.supplier.name %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", project, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_project_path(project), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", project, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
 </div>
 
 

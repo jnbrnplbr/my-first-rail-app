@@ -20,6 +20,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @suppliers = Supplier.all
+    @funds = Fund.all
   end
 
   # POST /projects or /projects.json
@@ -68,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:description, :bid_amount, :purchase_request_amount, :fund_id, :supplier_id, :specification, :notice_of_award, :notice_to_proceed, :purchase_order)
+      params.require(:project).permit(:description, :bid_amount, :purchase_request_amount, :fund_id, :supplier_id, :specification, :solicitation_number, :notice_of_award, :notice_to_proceed, :purchase_order)
     end
 end
