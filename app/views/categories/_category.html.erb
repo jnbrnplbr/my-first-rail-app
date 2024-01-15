@@ -1,0 +1,21 @@
+<tr id="<%= dom_id category %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= category.name %>
+  </td>
+  <td>
+    <%= category.user.email %>
+  </td>
+  <td>
+    <%= format_date(category.updated_at) %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", category, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_category_path(category), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", category, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr>

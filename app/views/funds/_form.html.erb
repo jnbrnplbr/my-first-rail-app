@@ -1,14 +1,14 @@
 <%= form_with(model: fund) do |form| %>
   <% if fund.errors.any? %>
-  <div class="mt-5">
-    <% fund.errors.each do |error| %>
-      <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
-        <%= error.full_message %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+    <div class="mt-5">
+      <% fund.errors.each do |error| %>
+        <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
+          <%= error.full_message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
 <div class="py-5 w-25">
   <div class="form-floating mb-3">

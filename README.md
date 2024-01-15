@@ -155,3 +155,40 @@
     number_to_currency(fund.amount, :unit=>"₱")
 ```
 
+16. Date Helper.
+    - Create a specific DateHelper for formatting and etc.
+```ruby 
+    # 1. Create new file app/helper/date_helper.rb
+    # 2. Name it as DateHelper (depends on what you desire) module
+        module DateHelper
+            # methods
+        end
+    # 3. Create a method inside it, like the method below:
+        def format_date(date)
+            date.strftime("%B %-d, %Y")
+        end
+    # 4. Include inside the app/controllers/application_controller.rb
+        include DateHelper
+    # 5. You can now use it inside the view. 
+        format_date(post.created_at)
+        #Output: January 12, 2024
+
+    #Note: You can format the date depends on what you desire.
+```
+<hr>
+
+# IMPORTANT PATTERN TO CHECK AFTER GENERATING A SCAFFOLD
+```ruby
+#1 After generating a scaffold double check the migrations if you still have some other columns that is needed to be add. If everything is fine then run the command below to migrate it (it will throw error if not yet migrated.)
+
+rails db:migrate
+
+#2 For admin panels (if it's must be on the side bar then add the designated link for the said model.)
+
+#3 Update the view pages for the generated model.
+
+#4 If there's a association/relationship between models then update it now. 
+
+#5 Add navigation guards. To prevent other user accessing the page if not authenticated. If you have roles you can also include it.
+
+```

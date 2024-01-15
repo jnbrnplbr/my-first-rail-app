@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include DateHelper
   layout :set_layout
   protect_from_forgery with: :exception
 
