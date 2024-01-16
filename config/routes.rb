@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :inventories
   resources :categories
   resources :funds
   resources :projects
