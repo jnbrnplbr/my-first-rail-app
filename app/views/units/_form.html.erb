@@ -1,0 +1,34 @@
+<%= form_with(model: unit) do |form| %>
+  <% if unit.errors.any? %>
+    <div class="mt-5">
+      <% unit.errors.each do |error| %>
+        <div class="alert alert-warning alert-dismissible fade show font-monospace text-start" role="alert">
+          <%= error.full_message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="py-5 w-25">
+    <div class="form-floating mb-3">
+      <%= form.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Name" %>
+      <%= form.label :name, for: "floatingInput", class: "font-monospace" %>
+    </div>
+
+    <div class="form-floating mb-3">
+      <%= form.text_field :slug, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Slug" %>
+      <%= form.label :slug, for: "floatingInput", class: "font-monospace" %>
+    </div>
+
+
+    <div class="d-flex justify-content-between">
+      <%= link_to "Back to Units", units_path, class: "btn btn-outline-secondary" %>
+      <% if request.path.include?"/edit" %>
+        <%= link_to "Show Unit", @unit, class: "btn btn-outline-success" %>
+      <% end %>
+      <%= form.submit "#{ (request.path.include?"/edit")? 'Update' : 'Submit' }", class: "btn #{ (request.path.include?"/edit")? 'btn-warning' : 'btn-primary'}"%>
+    </div>
+  </div>
+<% end %>
+

@@ -1,0 +1,21 @@
+<tr id="<%= dom_id unit %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= unit.name %>
+  </td>
+  <td>
+    <%= unit.slug%>
+  </td>
+  <td>
+    <%= unit.user.email %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", unit, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_unit_path(unit), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", unit, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr>

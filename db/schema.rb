@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_15_120753) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_16_143901) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "created_by"
@@ -26,6 +26,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_15_120753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by"], name: "index_funds_on_created_by"
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.string "serial_number"
+    t.string "model"
+    t.integer "quantity"
+    t.integer "unit_id"
+    t.integer "category_id"
+    t.integer "allocated_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_inventories_on_category_id"
+    t.index ["unit_id"], name: "index_inventories_on_unit_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -63,6 +76,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_15_120753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by"], name: "index_suppliers_on_created_by"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
