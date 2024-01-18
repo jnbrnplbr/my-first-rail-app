@@ -13,16 +13,26 @@ class InventoriesController < ApplicationController
   # GET /inventories/new
   def new
     @inventory = Inventory.new
+    @projects = Project.all
+    @brands = Brand.all
+    @categories = Category.all
+    @units = Unit.all
+    @users = User.all
   end
 
   # GET /inventories/1/edit
   def edit
+    @projects = Project.all
+    @brands = Brand.all
+    @categories = Category.all
+    @units = Unit.all
+    @users = User.all
   end
 
   # POST /inventories or /inventories.json
   def create
     @inventory = Inventory.new(inventory_params)
-
+    @inventory.created_by = current_user.id
     respond_to do |format|
       if @inventory.save
         format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully created." }
@@ -65,6 +75,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventory_params
-      params.require(:inventory).permit(:serial_number, :model, :quantity)
+      params.require(:inventory).permit(:serial_number, :model, :quantity, :unit_id, :category_id, :brand_id, :allocated_to, :project_id)
     end
 end

@@ -67,7 +67,7 @@
   
     <table class="table table-bordered table-hover font-monospace my-5">
       <thead>
-        <td colspan="8" class="fw-bolder">
+        <td colspan="9" class="fw-bolder">
          Inventory
         </td>
       </thead>
@@ -77,10 +77,30 @@
         <td>Model</td>
         <td>Quantity</td>
         <td>Unit</td>
-        <td>Alloted to</td>
+        <td>Allocated to</td>
         <td>Created by</td>
         <td>Last Update</td>
+        <td>Actions</td>
       </thead>
+      <tbody>
+        <% (@project.inventory).each do |item| %>
+          <tr>
+            <td>#</td>
+            <td><%= item.category.name %></td>
+            <td><%= item.model %></td>
+            <td><%= item.quantity %></td>
+            <td><%= item.unit.slug %></td>
+            <td><%= item.allocated_to_user.email %></td>
+            <td><%= item.created_by_user.email %></td>
+            <td><%= format_date(item.updated_at) %></td>
+            <td class="text-center">
+              <div class="btn-group " role="group" aria-label="Table Actions">
+                <%= link_to "Update", edit_inventory_path(item), class: "btn btn-outline-info" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 

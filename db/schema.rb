@@ -42,11 +42,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_121332) do
     t.integer "unit_id"
     t.integer "category_id"
     t.integer "brand_id"
+    t.integer "project_id"
     t.integer "allocated_to"
+    t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_inventories_on_brand_id"
     t.index ["category_id"], name: "index_inventories_on_category_id"
+    t.index ["project_id"], name: "index_inventories_on_project_id"
     t.index ["unit_id"], name: "index_inventories_on_unit_id"
   end
 

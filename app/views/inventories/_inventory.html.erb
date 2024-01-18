@@ -1,17 +1,15 @@
-<div id="<%= dom_id inventory %>">
-  <p>
-    <strong>Serial number:</strong>
-    <%= inventory.serial_number %>
-  </p>
-
-  <p>
-    <strong>Model:</strong>
-    <%= inventory.model %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= inventory.quantity %>
-  </p>
-
-</div>
+<tr id="<%= dom_id inventory %>">
+  <td>#</td>
+  <td><%= inventory.category.name %></td>
+  <td><%= inventory.model %></td>
+  <td><%= inventory.project.purchase_order %></td>
+  <td><%= inventory.project.supplier.name %></td>
+  <td><%= format_date(inventory.updated_at) %></td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", inventory, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_inventory_path(inventory), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", inventory, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr>
