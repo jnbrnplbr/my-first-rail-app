@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_16_143901) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_18_121332) do
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "created_by"
@@ -34,9 +41,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_16_143901) do
     t.integer "quantity"
     t.integer "unit_id"
     t.integer "category_id"
+    t.integer "brand_id"
     t.integer "allocated_to"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_inventories_on_brand_id"
     t.index ["category_id"], name: "index_inventories_on_category_id"
     t.index ["unit_id"], name: "index_inventories_on_unit_id"
   end

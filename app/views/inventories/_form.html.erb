@@ -11,6 +11,28 @@
     </div>
   <% end %>
 
+  <div class="py-5 w-25">
+    <div class="form-floating mb-3">
+      <%= form.text_field :serial_number, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Serial No." %>
+      <%= form.label :serial_number, for: "floatingInput", class: "font-monospace" %>
+    </div>
+
+    <div class="form-floating mb-3">
+      <%= form.text_field :model, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Model" %>
+      <%= form.label :model, for: "floatingInput", class: "font-monospace" %>
+    </div>
+
+
+    <div class="d-flex justify-content-between">
+      <%= link_to "Back to Units", units_path, class: "btn btn-outline-secondary" %>
+      <% if request.path.include?"/edit" %>
+        <%= link_to "Show Unit", @unit, class: "btn btn-outline-success" %>
+      <% end %>
+      <%= form.submit "#{ (request.path.include?"/edit")? 'Update' : 'Submit' }", class: "btn #{ (request.path.include?"/edit")? 'btn-warning' : 'btn-primary'}"%>
+    </div>
+  </div>
+
+
   <div>
     <%= form.label :serial_number, style: "display: block" %>
     <%= form.text_field :serial_number %>

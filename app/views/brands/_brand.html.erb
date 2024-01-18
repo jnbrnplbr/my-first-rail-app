@@ -1,0 +1,24 @@
+<tr id="<%= dom_id brand %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= brand.name %>
+  </td>
+  <td>
+    <%= brand.user.email%>
+  </td>
+  <td>
+    <%= format_date(brand.created_at) %>
+  </td>
+  <td>
+    <%= format_date(brand.updated_at) %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", brand, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_brand_path(brand), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", brand, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr>

@@ -6,6 +6,7 @@ class CreateInventories < ActiveRecord::Migration[7.1]
       t.integer :quantity
       t.belongs_to :unit
       t.belongs_to :category
+      t.belongs_to :brand
       t.integer :allocated_to
       t.timestamps
     end

@@ -3,11 +3,10 @@
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-end">
         <li class="breadcrumb-item"><a href="/" class="text-decoration-none font-monospace">Home</a></li>
-        <li class="breadcrumb-item"><%= link_to "Units", units_path, class: "text-decoration-none font-monospace" %></li>
-        <li class="breadcrumb-item active font-monospace" aria-current="page ">New Unit</li>
+        <li class="breadcrumb-item active font-monospace" aria-current="h2">Brands</li>
       </ol>
     </nav>
-      <h1 class="h2">New Unit</h1>
+      <h1 class="h2">Brands</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -21,4 +20,29 @@
   </div>
 <% end %>
 
-<%= render "form", unit: @unit %>
+<table class="table table-bordered table-hover font-monospace mt-5">
+  <thead >
+    <td colspan="6">
+      <%= link_to "New Brand", new_brand_path, class: "btn btn-primary float-end " %>
+    </td>
+  </thead>
+  <thead>
+    <th>#</th>
+    <th>Brand Name</th>
+    <th>Created By</th>
+    <th>Date Created</th>
+    <th>Last Update</th>
+    <th class="text-center">Actions</th>
+  </thead>
+  <tbody>
+    <% if @brands.count != 0 %>
+      <% @brands.each do |brand| %>
+        <%= render brand %>
+      <% end %>
+    <% else %>
+      <tr class="text-center">
+        <td colspan="6" class="text-muted">No available brand yet. </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -36,8 +36,8 @@
   </thead>
   <tbody>
     <% if @units.count != 0 %>
-      <% @units.each do |fund| %>
-        <%= render fund %>
+      <% @units.each do |unit| %>
+        <%= render unit %>
       <% end %>
     <% else %>
       <tr class="text-center">
