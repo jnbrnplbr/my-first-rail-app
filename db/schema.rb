@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_18_121332) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_20_123719) do
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.integer "created_by"
@@ -69,6 +69,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_121332) do
     t.datetime "updated_at", null: false
     t.index ["fund_id"], name: "index_projects_on_fund_id"
     t.index ["supplier_id"], name: "index_projects_on_supplier_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.string "menu_actions", default: ""
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stocks", force: :cascade do |t|

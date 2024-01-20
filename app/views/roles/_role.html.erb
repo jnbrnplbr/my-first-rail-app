@@ -1,0 +1,27 @@
+<tr id="<%= dom_id role %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= role.name %>
+  </td>
+  <td>
+    <%= role.code %>
+  </td>
+  <td>
+    <%= role.user.email %>
+  </td>
+  <td>
+    <%= format_date(role.created_at) %>
+  </td>
+  <td>
+    <%= format_date(role.updated_at) %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " role="group" aria-label="Table Actions">
+      <%= link_to "Show", role, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_role_path(role), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", role, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr> 
