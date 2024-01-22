@@ -177,6 +177,8 @@
 ```
 <hr>
 
+17. 
+
 # IMPORTANT PATTERN TO CHECK AFTER GENERATING A SCAFFOLD
 ```ruby
 #1 After generating a scaffold double check the migrations if you still have some other columns that is needed to be add. If everything is fine then run the command below to migrate it (it will throw error if not yet migrated.)
@@ -192,3 +194,4 @@ rails db:migrate
 #5 Add navigation guards. To prevent other user accessing the page if not authenticated. If you have roles you can also include it.
 
 ```
+

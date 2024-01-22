@@ -7,11 +7,16 @@
       <h1 class="h3 mb-1 fw-bold font-monospace">Sign Up</h1>
       <p class="mb-2 text-muted fw-light font-monospace"><small>Already have an account? <%= link_to "Log in", new_user_session_path, class: "link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %></small></p>
       
-      <div class="form-floating">
+      <div class="form-floating mb-1">
+        <%= f.text_field :name, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Name" %>
+        <%= f.label :name, for: "floatingInput", class: "font-monospace" %>
+      </div>
+      
+      <div class="form-floating mb-1">
         <%= f.email_field :email, class: "form-control font-monospace", id: "floatingInput",   placeholder: "Email Address" %>
         <%= f.label :email, for: "floatingInput", class: "font-monospace" %>
       </div>
-      <div class="form-floating">
+      <div class="form-floating mb-1">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control font-monospace", placeholder: "Password", id: "floatingPassword" %>
         <%= f.label :password, id: "floatingPassword", class: "font-monospace" %>
       </div>

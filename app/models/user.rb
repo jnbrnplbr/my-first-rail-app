@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :supplier, dependent: :delete_all
   has_many :fund, dependent: :delete_all
+  belongs_to :role
 end
