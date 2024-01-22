@@ -1,11 +1,10 @@
 class CreateHistories < ActiveRecord::Migration[7.1]
   def change
     create_table :histories do |t|
-      t.string :name
       t.string :action
+      t.string :module
       t.string :description
-      t.belongs_to :module, null: false, foreign_key: true
-
+      t.integer :created_by
       t.timestamps
     end
   end
