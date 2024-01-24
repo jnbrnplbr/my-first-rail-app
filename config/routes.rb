@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :funds
   resources :projects
+  resources :users
 
 
   get 'pages/dashboard'

@@ -1,0 +1,24 @@
+<tr id="<%= dom_id user %>">
+  <td>
+    #
+  </td>
+  <td>
+    <%= user.name %>
+  </td>
+  <td>
+    <%= user.email%>
+  </td>
+  <td>
+    <%= format_date(user.created_at) %>
+  </td>
+  <td>
+    <%= format_date(user.updated_at) %>
+  </td>
+  <td class="text-center">
+    <div class="btn-group " user="group" aria-label="Table Actions">
+      <%= link_to "Show", user, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-info" %>
+      <%= link_to "Delete", user, data: {:confirm => 'Are you sure?'}, method: :delete , class: "btn btn-outline-danger" %>
+    </div>
+  </td>
+</tr> 

@@ -49,7 +49,7 @@
             <%= form.label :model, for: "floatingInput", class: "font-monospace" %>
           </div>
           <div class="form-floating mb-3">
-            <%= select_tag "#{:inventory}[#{:allocated_to}]", options_from_collection_for_select(@users, "id","email"),class: "form-control" %>
+            <%= select_tag "#{:inventory}[#{:allocated_to}]", options_from_collection_for_select(@users, "id","name"),class: "form-control" %>
             <%= form.label "Allocated To", for: "floatingInput", class: "font-monospace" %>
           </div>
       </div>
